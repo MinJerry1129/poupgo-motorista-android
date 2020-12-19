@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:/Users/midastecnologia/Documents/Developer/Midas/android/brazilgo-uber-android-driver/app/libs/prjlibfiles.aar:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f338abf2a5b7293e62375bfb9a883dc7/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f338abf2a5b7293e62375bfb9a883dc7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f338abf2a5b7293e62375bfb9a883dc7/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/container"
+    android:layout_height="match_parent"
+    tools:context=".MyEarnings">
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <com.view.MTextView
+            android:id="@+id/tv_datini"
+            android:layout_weight="1"
+            android:text="06/03/2019"
+            android:textSize="@dimen/txt_size_20"
+            android:textColor="#707070"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp" />
+        <com.view.MTextView
+            android:id="@+id/tv_datfin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#707070"
+            android:textSize="@dimen/txt_size_20"
+            android:text="06/03/2019"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp" />
+    </LinearLayout>
+
+    <com.view.MTextView
+        android:layout_width="match_parent"
+        android:textColor="#707070"
+        android:text="Saldo"
+        android:textSize="@dimen/txt_size_20"
+
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:customTypeFace="@string/robotobold"
+        android:layout_height="wrap_content" />
+
+    <com.view.MTextView
+        android:layout_width="match_parent"
+        android:textColor="#009000"
+        android:text="R$ 0,00"
+        android:id="@+id/total_driver_payment"
+        android:textSize="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:customTypeFace="@string/robotobold"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#707070"
+
+        android:layout_margin="@dimen/txt_size_15"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <com.view.MTextView
+            android:layout_weight="2"
+            android:text="Pagamentos Totais"
+            android:textSize="@dimen/txt_size_20"
+            android:textColor="#707070"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp" />
+        <com.view.MTextView
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:textSize="@dimen/txt_size_20"
+            android:id="@+id/tv_payment_tot"
+
+            android:textColor="#000"
+            android:text="R$ 0,00"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/appThemeColor_1"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp"/>
+
+    <com.view.MTextView
+        android:layout_width="match_parent"
+        android:textColor="#000"
+        android:text="VIAGENS"
+        android:textSize="@dimen/txt_size_20"
+
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:customTypeFace="@string/robotobold"
+        android:layout_height="wrap_content" />
+
+    <com.view.MTextView
+        android:layout_width="match_parent"
+        android:textColor="#707070"
+        android:text="0"
+        android:id="@+id/tv_number_travels"
+        android:textSize="@dimen/txt_size_20"
+
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:customTypeFace="@string/robotobold"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/btn_type2"
+        layout="@layout/btn_type_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_btn_height"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="20dp" />
+
+
+</LinearLayout>

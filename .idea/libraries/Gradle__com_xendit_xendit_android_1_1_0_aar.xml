@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.xendit:xendit-android:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/07c5f1138244eea0d0d48925624eb75b/xendit-android-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/07c5f1138244eea0d0d48925624eb75b/xendit-android-1.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xendit/xendit-android/1.1.0/aa8e3d1610f3c3b7715dd80a769c40069ca12f9f/xendit-android-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xendit/xendit-android/1.1.0/9f96eb0add494f40733de84cfc5ac461b4ab5c69/xendit-android-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:D./Projetos/poupgo-motorista-android/app/libs/prjlibfiles.aar:unspecified@jar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d19b48a8e62a85dd7c6801194508107/prjlibfiles/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d19b48a8e62a85dd7c6801194508107/prjlibfiles/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d19b48a8e62a85dd7c6801194508107/prjlibfiles/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

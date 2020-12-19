@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.paymaya:sdk-android:0.8.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/978cd499c380abdb0fd93616c9d40ef4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/978cd499c380abdb0fd93616c9d40ef4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paymaya/sdk-android/0.8.0/3f16048e8dcfef16a24a60d152a764f3be660ddf/sdk-android-0.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/docTitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imagarea"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:maxLines="1"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/appThemeColor_1"
+            android:textSize="@dimen/txt_size_16"
+            app:customTypeFace="roboto_bold" />
+
+        <include
+            android:id="@+id/btn_type_ride"
+            layout="@layout/btn_type_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp" />
+
+        <include
+
+            android:id="@+id/btn_type_deliver"
+            layout="@layout/btn_type_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp" />
+
+        <include
+
+            android:id="@+id/btn_type_uberx"
+            layout="@layout/btn_type_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

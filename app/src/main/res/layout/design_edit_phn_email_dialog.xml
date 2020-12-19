@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height1"
+                android:background="@color/appThemeColor_1"
+                android:orientation="horizontal"
+                android:paddingStart="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_img_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:layout_weight="0"
+                    android:tint="@color/appThemeColor_TXT_1" />
+
+
+                <com.view.MTextView
+                    android:textAllCaps="true"
+                    android:id="@+id/titleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="start|center"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/appThemeColor_TXT_1"
+                    android:textSize="@dimen/txt_size_14"
+                    app:customTypeFace="@string/robotomediumFont" />
+            </LinearLayout>
+
+
+            <com.view.MTextView
+                android:id="@+id/hintTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_margin="10dp"
+                android:gravity="start|center"
+                android:text=""
+                android:textAlignment="viewStart"
+                android:textColor="@color/appThemeColor_2"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="roboto_light" />
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/updateEmailArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/verify_popup_border"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/emailBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/txt_size_16" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:gravity="center">
+
+                    <com.view.MTextView
+                        android:id="@+id/updateEmailTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:gravity="center"
+                        android:text="Update"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textStyle="bold"
+                        app:customTypeFace="roboto_bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/updateMobileArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/verify_popup_border"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+
+                <!--<include-->
+                <!--android:id="@+id/countryBox"-->
+                <!--layout="@layout/editbox_form_design"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="5dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_weight="0.30" />-->
+                <!--<LinearLayout-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.30"-->
+                <!--android:orientation="horizontal"-->
+
+                <!--&gt;-->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/yearSelectArea"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
+
+                        <EditText
+                            android:id="@+id/countryBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="4dp"
+                            android:background="@null"
+                            android:ellipsize="end"
+                            android:inputType="textNoSuggestions"
+                            android:maxLines="1"
+                            android:paddingStart="5dp"
+                            android:text=""
+                            android:layout_gravity="start|center"
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/txt_size_16" />
+
+
+                        <LinearLayout
+                            android:layout_toEndOf="@+id/countryBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_alignParentEnd="true"
+                                android:id="@+id/imageView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:clickable="false"
+                                android:src="@drawable/ic_down_arrow"
+                                android:tint="@color/appThemeColor_1" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <!--</LinearLayout>-->
+
+                    <EditText
+                        android:layout_marginStart="5dp"
+                        android:id="@+id/mobileBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:ellipsize="end"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textAlignment="textStart"
+                        android:textSize="@dimen/txt_size_16" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:gravity="center">
+
+                    <com.view.MTextView
+                        android:id="@+id/updateMobileTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:gravity="center"
+                        android:text="Update"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textStyle="bold"
+                        app:customTypeFace="roboto_bold" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/errorTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:gravity="start|center"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/bt_error_red"
+                android:textSize="@dimen/txt_size_12"
+                android:visibility="gone"
+                app:customTypeFace="roboto_light" />
+
+        </LinearLayout>
+
+        <com.view.MTextView
+            android:id="@+id/cancelTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/all_btn_height1"            android:layout_below="@+id/imagarea"
+            android:layout_gravity="end|top|center"
+            android:layout_marginStart="10dp"
+            android:gravity="center|end"
+            android:maxLines="1"
+            android:paddingEnd="5dp"
+            android:text="Cancel"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/appThemeColor_TXT_1"
+            android:textSize="@dimen/txt_size_18"
+            app:customTypeFace="@string/robotomediumFont" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1eeee"
+    android:orientation="vertical"
+    tools:context=".RentalDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbarArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomArea"
+        android:layout_below="@+id/toolbarArea">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/addressArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/addressHtxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/appThemeColor_2"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/robotobold" />
+
+                <com.view.MTextView
+                    android:id="@+id/addressVtxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/robotolightFont" />
+
+
+                <View
+                    android:id="@+id/rightSeperationLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#BABABA" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cabTypeArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#BABABA" />
+
+                <com.view.MTextView
+                    android:id="@+id/cabTypeHtxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="true"
+                    android:textColor="@color/appThemeColor_2"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/robotobold" />
+
+                <com.view.MTextView
+                    android:id="@+id/rideLtaerDatetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="#4187D6"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="gone"
+                    app:customTypeFace="roboto_light" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.08"
+                        android:minWidth="50dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/carTypeImage"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+
+                                android:src="@mipmap/ic_car_lux" />
+
+
+                            <com.view.MTextView
+                                android:visibility="invisible"
+                                android:id="@+id/minTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:minWidth="40dp"
+                                android:text="ddd"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="roboto_light" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/carTypeVtxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:gravity="start|center"
+                                android:maxLines="1"
+                                android:minHeight="40dp"
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/txt_size_16"
+                                app:customTypeFace="@string/robotolightFont" />
+
+                            <com.view.MTextView
+                                android:id="@+id/carTypeDetailsTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="roboto_light" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#BABABA" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pkgArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#BABABA" />
+
+
+                <LinearLayout
+                    android:id="@+id/pkgArrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/packageHtxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="start"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textAllCaps="true"
+                                android:textColor="@color/appThemeColor_2"
+                                android:textSize="@dimen/txt_size_16"
+                                app:customTypeFace="@string/robotobold" />
+
+                            <com.view.MTextView
+                                android:id="@+id/packageVtxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:gravity="start"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/txt_size_16"
+                                app:customTypeFace="roboto_light" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imageArrow"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:src="@mipmap/ic_arrow_up"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/pkgDivideView"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#BABABA" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/packageRecyclerView"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#BABABA"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
+
+
+                            <com.view.MTextView
+                                android:id="@+id/fareTitletxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/txt_size_16"
+                                app:customTypeFace="@string/robotobold" />
+
+                            <com.view.MTextView
+                                android:id="@+id/fareMsgtxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="@string/robotolightFont" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fareInfoArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:tint="#4187D6"
+                            app:srcCompat="@drawable/ic_information" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottomArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <include
+
+            android:id="@+id/acceptBtn"
+            layout="@layout/btn_type_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height" />
+    </LinearLayout>
+
+
+</RelativeLayout>

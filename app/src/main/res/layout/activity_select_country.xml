@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/appThemeColor_1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/searcharea"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/appThemeColor_1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/searchTxt"
+            layout="@layout/editbox_form_design"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_shape"
+            android:drawableStart="@mipmap/ic_search_toolbar"
+            android:hint="search"
+            android:inputType="textNoSuggestions"
+            android:padding="5dp"
+            android:paddingEnd="25dp"
+            android:singleLine="true"
+            android:textAlignment="viewStart" />
+
+        <ImageView
+            android:id="@+id/imageCancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="-40dp"
+            android:src="@mipmap/ic_cancel_cab_request"
+            android:tint="@android:color/black" />
+
+        <com.view.MTextView
+            android:id="@+id/cancelTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_18"
+            app:customTypeFace="roboto_light" />
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/toolbarArea"
+        layout="@layout/design_toolbar_general" />
+
+    <RelativeLayout
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.utilities.view.pinnedListView.PinnedSectionListView
+            android:id="@+id/country_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:divider="#dddddd"
+            android:dividerHeight="1dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false" />
+
+        <com.view.MTextView
+            android:id="@+id/noResTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:textColor="#9F9F9F"
+            android:textSize="@dimen/txt_size_16"
+            android:visibility="gone"
+            app:customTypeFace="roboto_light" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <com.utilities.view.ErrorView
+            android:id="@+id/errorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#82000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/bgImgView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <com.general.crop.CropImageView
+            android:id="@+id/cropImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#272727"
+        android:orientation="horizontal">
+
+        <com.view.MTextView
+            android:id="@+id/cancelTxtView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/rotateLeftImgView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:src="@mipmap/crop_image_menu_rotate_left" />
+
+            <ImageView
+                android:id="@+id/resetImgView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:src="@mipmap/ic_reset_crop_img"
+                android:tint="#ffffff" />
+
+            <ImageView
+                android:id="@+id/rotateRightImgView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:src="@mipmap/crop_image_menu_rotate_right" />
+        </LinearLayout>
+
+        <com.view.MTextView
+            android:id="@+id/doneTxtView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+</LinearLayout>

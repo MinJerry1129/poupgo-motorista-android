@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.sac:SocketclusterClientJava:1.7.5@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.sac/SocketclusterClientJava/1.7.5/16aa66bd9726ddb447462b1ede5dc02845fe7c5d/SocketclusterClientJava-1.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.sac/SocketclusterClientJava/1.7.5/b035967e9a92da688bc473173d5a724d14691445/SocketclusterClientJava-1.7.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.sac/SocketclusterClientJava/1.7.5/eab1513fc66b69f305e03085a5bee2127b8164ec/SocketclusterClientJava-1.7.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

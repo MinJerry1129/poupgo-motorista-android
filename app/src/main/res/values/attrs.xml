@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MaterialTabs">
+        <attr name="mtIndicatorColor" format="color" />
+        <attr name="mtUnderlineColor" format="color" />
+        <attr name="mtIndicatorHeight" format="dimension" />
+        <attr name="mtUnderlineHeight" format="dimension" />
+        <attr name="mtTabPaddingLeftRight" format="dimension" />
+        <attr name="mtSameWeightTabs" format="boolean" />
+        <attr name="mtTextAllCaps" format="boolean" />
+        <attr name="mtPaddingMiddle" format="boolean" />
+        <attr name="mtTextColorSelected" format="color" />
+        <attr name="mtTextColorUnSelected" format="color" />
+        <attr name="mtMrlRippleColor" format="color" localization="suggested" />
+        <attr name="mtMrlRippleHighlightColor" format="color" localization="suggested" />
+        <attr name="mtMrlRippleDiameter" format="dimension" localization="suggested" />
+        <attr name="mtMrlRippleOverlay" format="boolean" localization="suggested" />
+        <attr name="mtMrlRippleAlpha" format="float" localization="suggested" />
+        <attr name="mtMrlRippleDuration" format="integer" localization="suggested" />
+        <attr name="mtMrlRippleFadeDuration" format="integer" localization="suggested" />
+        <attr name="mtMrlRippleDelayClick" format="boolean" localization="suggested" />
+        <attr name="mtMrlRipplePersistent" format="boolean" localization="suggested" />
+        <attr name="mtMrlRippleInAdapter" format="boolean" localization="suggested" />
+        <attr name="mtMrlRippleRoundedCorners" format="dimension" localization="suggested" />
+    </declare-styleable>
+
+
+    <declare-styleable name="NetworkRImgView">
+        <attr name="nr_left_top_corner_radius" format="dimension" />
+        <attr name="nr_right_top_corner_radius" format="dimension" />
+        <attr name="nr_left_bottom_corner_radius" format="dimension" />
+        <attr name="nr_right_bottom_corner_radius" format="dimension" />
+        <attr name="nr_border_width" format="dimension" />
+        <attr name="nr_border_color" format="color" />
+        <attr name="nr_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+
+
+    <declare-styleable name="CustomCalendarView">
+        <attr name="calendarTitleTextColor" format="color" />
+        <attr name="dayOfWeekTextColor" format="color" />
+        <attr name="dayOfMonthTextColor" format="color" />
+        <attr name="calendarBackgroundColor" format="color" />
+        <attr name="disabledDayBackgroundColor" format="color" />
+        <attr name="disabledDayTextColor" format="color" />
+        <attr name="selectedDayBackgroundColor" format="color" />
+        <attr name="selectedDayTextColor" format="color" />
+        <attr name="weekLayoutBackgroundColor" format="color" />
+        <attr name="titleLayoutBackgroundColor" format="color" />
+        <attr name="currentDayOfMonthColor" format="color" />
+        <attr name="currentDayOfMonthBackgroundColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="timeline_style" >
+        <attr name="marker" format="color|reference"/>
+        <attr name="line" format="color|reference"/>
+        <attr name="markerSize" format="dimension"/>
+        <attr name="lineSize" format="dimension"/>
+        <attr name="lineOrientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="linePadding" format="dimension"/>
+        <attr name="markerInCenter" format="boolean"/>
+    </declare-styleable>
+
+</resources>

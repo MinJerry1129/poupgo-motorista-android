@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.poupgo.driver">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <permission
+        android:name="com.poupgo.driver.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission
+        android:name="com.homodriver.driver.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <permission
+        android:name="com.poupgo.driver.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.homodriver.driver.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.general.files.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppCompatTheme">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <activity android:name="com.poupgo.driver.MyEarnings"></activity>
+
+        <receiver
+            android:name="com.general.files.AlarmReceiver"
+            android:enabled="false">
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_android_geo_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- <meta-data -->
+        <!-- android:name="io.fabric.ApiKey" -->
+        <!-- android:value="1eef6e436485c8cf780409a74796511bb9c9c8b0" /> -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <!--
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.homodriver.driver" />
+            </intent-filter>
+        </receiver>
+        -->
+
+
+        <!-- Network on off Receiver Start -->
+        <!--
+        <receiver
+            android:exported="false"
+            android:name=".NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        -->
+        <!-- Network on off Receiver End -->
+
+        <service android:name="com.general.files.ChatHeadService" />
+        <!--
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        -->
+        <service android:name="com.poupgo.driver.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.general.files.UpdateDriverStatus"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Update Status" />
+        <service
+            android:name="com.general.files.LocationUpdateService"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Location Dispatch"
+            android:persistent="true" />
+        <service
+            android:name="com.general.files.ConfigDriverTripStatusJobService"
+            android:exported="false"
+            android:label="Status Update Service">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.general.files.UpdateDriverLocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Update Locations" />
+        <service
+            android:name="com.general.files.UpdateTripLocationsService"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Update Locations" />
+        <service
+            android:name="com.general.files.MyBackGroundService"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Service Alert"
+            android:persistent="true" />
+
+        <receiver
+            android:name="com.poupgo.driver.StartServiceReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.homodriver.driver.StartServiceReceiver" />
+                <action android:name="android.intent.action.REBOOT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.poupgo.driver.LauncherActivity"
+            android:screenOrientation="portrait">
+
+            <!-- android:launchMode="singleTask" -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/FBtheme"
+            tools:replace="android:theme" />
+        <activity
+            android:name="com.twitter.sdk.android.core.identity.OAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.AppLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SelectCountryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SelectStateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SelectCityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.poupgo.driver.MyHeatViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SearchPickupLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.AppLoignRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SupportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.MyProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name="com.poupgo.driver.StaticPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.QuestionAnswerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.CabRequestedActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <!-- android:launchMode="singleTask" -->
+        <activity
+            android:name="com.poupgo.driver.DriverArrivedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.ActiveTripActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.CollectPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.TripRatingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.RideHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SelectedDayHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.RideHistoryDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.DriverFeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.MyBookingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.MyWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.MyWalletHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.InviteFriendsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.VerifyInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.CardPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.HistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.ListOfDocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.UploadDocActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.ManageVehiclesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.AddVehicleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.StatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.AccountverificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SuspendedDriver_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.EmergencyContactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.ConfirmEmergencyTapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.WayBillActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.HailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.FareBreakDownActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.PrefranceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.BankDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name="com.poupgo.driver.FirebaseDataReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.poupgo.driver.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.SearchLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.MaintenanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.WorkLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.poupgo.driver.VerifyCardTokenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="co.omise.android.ui.CreditCardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/OmiseSDKTheme" />
+        <activity
+            android:name="com.poupgo.driver.RentalDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.poupgo.driver.RentalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xendit.XenditActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Auto Read -->
+        <receiver android:name="com.autoReadOtp.SmsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="com.poupgo.driver.AddOrEditCardActivity" />
+        <activity
+            android:name="com.poupgo.driver.CropImageActivity"
+            android:screenOrientation="portrait" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="cc800fcd165739f1390c86038807b823fc4bdb76" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="cc800fcd165739f1390c86038807b823fc4bdb76" />
+    </application>
+
+</manifest>

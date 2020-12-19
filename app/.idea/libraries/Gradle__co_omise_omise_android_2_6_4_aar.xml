@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: co.omise:omise-android:2.6.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f77133b7dc152b3b8752a266934d94ad/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f77133b7dc152b3b8752a266934d94ad/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
