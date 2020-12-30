@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="poupgo-motorista-android/app" />
-      <module fileurl="file://$PROJECT_DIR$/poupgo-motorista-android.iml" filepath="$PROJECT_DIR$/poupgo-motorista-android.iml" group="poupgo-motorista-android" />
+      <module fileurl="file://$PROJECT_DIR$/poupgo-motorista-android.iml" filepath="$PROJECT_DIR$/poupgo-motorista-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/poupgo-motorista-android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/poupgo-motorista-android.app.iml" />
     </modules>
   </component>
 </project>

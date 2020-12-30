@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1a4c98ee3c793d5d8513557c55c5bad/volley-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1a4c98ee3c793d5d8513557c55c5bad/volley-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1a4c98ee3c793d5d8513557c55c5bad/volley-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.volley/volley/1.0.0/e2ba84556c309ec1d35042a7a8b258c3d9d00cd2/volley-1.0.0-javadoc.jar!/" />

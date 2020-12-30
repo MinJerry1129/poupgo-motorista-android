@@ -102,5 +102,6 @@ public class CommonUtilities {
     public static String TWITTER_LOGIN = "TWITTER_LOGIN";
 
     public static String WORKLOCATION = "vWorkLocation";
+    public static String SURGEPRICEFACTOR = "SurgePriceFactor";
 
 }

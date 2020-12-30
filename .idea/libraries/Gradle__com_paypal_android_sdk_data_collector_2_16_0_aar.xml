@@ -4,6 +4,7 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab561bbf1ebe0085c6d96fc232b2979f/data-collector-2.16.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab561bbf1ebe0085c6d96fc232b2979f/data-collector-2.16.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab561bbf1ebe0085c6d96fc232b2979f/data-collector-2.16.0/jars/libs/paypal-data-collector-3.1.6.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab561bbf1ebe0085c6d96fc232b2979f/data-collector-2.16.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paypal.android.sdk/data-collector/2.16.0/8680f02886101e3cbbbcc3ebe70ce7164beae26b/data-collector-2.16.0-javadoc.jar!/" />

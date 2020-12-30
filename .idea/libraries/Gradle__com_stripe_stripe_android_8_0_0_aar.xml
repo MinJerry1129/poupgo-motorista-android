@@ -6,6 +6,7 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75d384d8e7b5695d3d46c5b1d8807507/stripe-android-8.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75d384d8e7b5695d3d46c5b1d8807507/stripe-android-8.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75d384d8e7b5695d3d46c5b1d8807507/stripe-android-8.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.stripe/stripe-android/8.0.0/2cd521ec02cd98a24ff3b1bd64d1b20fa464e569/stripe-android-8.0.0-javadoc.jar!/" />

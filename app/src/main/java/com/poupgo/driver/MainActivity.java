@@ -33,6 +33,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.adapter.files.DrawerAdapter;
 import com.adapter.files.ManageVehicleListAdapter;
@@ -97,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     DrawerAdapter drawerAdapter;
     ArrayList<String[]> list_menu_items;
     SupportMapFragment map;
+    LinearLayout layoutSurge;
+    TextView surgePrice;
     GoogleMap gMap;
     boolean isFirstLocation = true;
     ImageView userLocBtnImgView;
@@ -188,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private JSONObject obj_userProfile;
 
     String HailEnableOnDriverStatus = "";
+    String surgePriceFactor = "1";
 
 
     boolean isBtnClick = false;
@@ -225,6 +229,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         askForSystemOverlayPermission();
 
         userProfileJson = generalFunc.retrieveValue(CommonUtilities.USER_PROFILE_JSON);
+        surgePriceFactor = generalFunc.retrieveValue(CommonUtilities.SURGEPRICEFACTOR);
+
         obj_userProfile = generalFunc.getJsonObject(userProfileJson);
         app_type = generalFunc.getJsonValueStr("APP_TYPE", obj_userProfile);
 
@@ -232,7 +238,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         getAddressFromLocation = new GetAddressFromLocation(getActContext(), generalFunc);
         getAddressFromLocation.setAddressList(this);
-
 
         titleTxt = (MTextView) findViewById(R.id.titleTxt);
         refreshImgView = (ImageView) findViewById(R.id.refreshImgView);
@@ -328,7 +333,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ufxonlineOfflineSwitch = (SwitchButton) findViewById(R.id.ufxonlineOfflineSwitch);
 
         map = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapV2);
-
+        layoutSurge = (LinearLayout)findViewById(R.id.layout_surge);
+        surgePrice = (TextView)findViewById(R.id.surgePriceFactor);
+        layoutSurge.setVisibility(View.GONE);
 
         imgSetting = (ImageView) findViewById(R.id.imgSetting);
         imgSetting.setOnClickListener(new setOnClickList());
@@ -350,6 +357,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         buildMenu();
 
         setUserInfo();
+        checkSurgePrice(); //Check surge Price
 
         if (generalFunc.getJsonValue("RIDE_LATER_BOOKING_ENABLED", userProfileJson).equalsIgnoreCase("Yes")) {
             pendingMainArea.setVisibility(View.VISIBLE);
@@ -367,31 +375,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         userLocBtnImgView.setOnClickListener(new setOnClickList());
         userHeatmapBtnImgView.setOnClickListener(new setOnClickList());
 
-            onlineOfflineSwitch.setOnCheckedChangeListener((compoundButton, b) -> {
+        onlineOfflineSwitch.setOnCheckedChangeListener((compoundButton, b) -> {
 
-                if (!intCheck.isNetworkConnected()) {
+            if (!intCheck.isNetworkConnected()) {
 
-                    generalFunc.showGeneralMessage("",
-                            generalFunc.retrieveLangLBl("No Internet Connection", "LBL_NO_INTERNET_TXT"));
-                    return;
-                }
+                generalFunc.showGeneralMessage("",
+                        generalFunc.retrieveLangLBl("No Internet Connection", "LBL_NO_INTERNET_TXT"));
+                return;
+            }
 
-                if (b == true) {
-                    onlineOfflineSwitch.setThumbColorRes(R.color.Green);
-                    onlineOfflineSwitch.setBackColorRes(android.R.color.white);
-                } else {
-                    onlineOfflineSwitch.setThumbColorRes(android.R.color.holo_red_dark);
-                    onlineOfflineSwitch.setBackColorRes(android.R.color.white);
-                }
+            if (b == true) {
+                onlineOfflineSwitch.setThumbColorRes(R.color.Green);
+                onlineOfflineSwitch.setBackColorRes(android.R.color.white);
+            } else {
+                onlineOfflineSwitch.setThumbColorRes(android.R.color.holo_red_dark);
+                onlineOfflineSwitch.setBackColorRes(android.R.color.white);
+            }
 
-                if (isOnlineAvoid == true) {
-                    isOnlineAvoid = false;
-                    return;
-                }
+            if (isOnlineAvoid == true) {
+                isOnlineAvoid = false;
+                return;
+            }
 
-                goOnlineOffline(b, true);
-                MainActivity.super.onResume();
-            });
+            goOnlineOffline(b, true);
+            MainActivity.super.onResume();
+        });
 
         if (savedInstanceState != null) {
             String restratValue_str = savedInstanceState.getString("RESTART_STATE");
@@ -405,7 +413,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         JSONArray arr_CurrentRequests = generalFunc.getJsonArray("CurrentRequests", userProfileJson);
 
+
+        generalFunc.retrieveValue("message");
+
         if (arr_CurrentRequests.length() > 0) {
+            Log.d("CurrentRequest:::", String.valueOf(arr_CurrentRequests));
             updateRequest = new UpdateFrequentTask(5 * 1000);
 //            this.updateRequest = updateRequest;
             updateRequest.setTaskRunListener(this);
@@ -485,7 +497,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             return;
         }
         String eStatus = generalFunc.getJsonValueStr("eStatus", obj_userProfile);
-
+        hileimagview.setVisibility(View.VISIBLE);
         if (!eStatus.equalsIgnoreCase("inactive")) {
             ENABLE_HAIL_RIDES = generalFunc.getJsonValue("ENABLE_HAIL_RIDES", userProfileJson);
             if (ENABLE_HAIL_RIDES.equalsIgnoreCase("Yes") && HailEnableOnDriverStatus.equalsIgnoreCase("Yes")) {
@@ -528,10 +540,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (generalFunc.retrieveValue(CommonUtilities.DRIVER_CURRENT_REQ_OPEN_KEY).equals("true")) {
             return;
         }
-
+        checkSurgePrice();
         JSONArray arr_CurrentRequests = generalFunc.getJsonArray("CurrentRequests", userProfileJson);
-
+        Log.d("CurrentRequest:::", String.valueOf(arr_CurrentRequests));
         if (currentRequestPositions < arr_CurrentRequests.length()) {
+            Log.d("CurrentRequest:::", String.valueOf(arr_CurrentRequests));
             JSONObject obj_temp = generalFunc.getJsonObject(arr_CurrentRequests, currentRequestPositions);
 
             String message_str = generalFunc.getJsonValue("tMessage", obj_temp.toString()).replace("\\\"", "\"");
@@ -809,6 +822,55 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    public void checkSurgePrice() {
+        HashMap<String, String> parameters = new HashMap<String, String>();
+        parameters.put("type", "checkSurgePrice");
+        parameters.put("vehicleTypeId", "1");
+        parameters.put("selectedDataTime", "");
+        parameters.put("iRentalPackageId", "0");
+
+        ExecuteWebServerUrl exeWebServer = new ExecuteWebServerUrl(getActContext(), parameters);
+        exeWebServer.setLoaderConfig(getActContext(), true, generalFunc);
+        exeWebServer.setDataResponseListener(new ExecuteWebServerUrl.SetDataResponse() {
+            @Override
+            public void setResponse(String responseString) {
+
+                if (responseString != null && !responseString.equals("")) {
+
+
+                    generalFunc.sendHeartBeat();
+
+                    boolean isDataAvail = GeneralFunctions.checkDataAvail(CommonUtilities.action_str, responseString);
+                    Log.d("responseString::", responseString);
+
+//                    if (isDataAvail == true) {
+                    surgePriceFactor =  generalFunc.getJsonValue("SurgePriceValue", responseString);
+                    if(surgePriceFactor != null){
+                        if(!surgePriceFactor.equals("")){
+                            double surgePrice_factor = Double.parseDouble(surgePriceFactor);
+                            surgePrice.setText(surgePriceFactor + "X");
+                            if(surgePrice_factor == 1){
+                                Log.d("surgeprice::", "same");
+                                layoutSurge.setVisibility(View.GONE);
+                            }else if(surgePrice_factor > 1){
+                                Log.d("surgeprice::", "big");
+                                layoutSurge.setVisibility(View.VISIBLE);
+                            }
+                        }
+                    }
+
+//                    } else {
+//
+//                    }
+                } else {
+                    generalFunc.showError();
+                }
+            }
+        });
+        exeWebServer.execute();
+    }
+
+
     public void onMapReady(GoogleMap googleMap) {
 
         (findViewById(R.id.LoadingMapProgressBar)).setVisibility(View.GONE);
@@ -1072,11 +1134,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (intCheck.isNetworkConnected()) {
                     isOnlineAvoid = true;
 
-                        if (isGoOnline == true) {
-                            onlineOfflineSwitch.setChecked(false);
-                        } else {
-                            onlineOfflineSwitch.setChecked(true);
-                        }
+                    if (isGoOnline == true) {
+                        onlineOfflineSwitch.setChecked(false);
+                    } else {
+                        onlineOfflineSwitch.setChecked(true);
+                    }
 
                 }
 
@@ -1104,6 +1166,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
     private CustomChildEventListener customChildEventListener;
     public DatabaseReference rootRef = null;
+
 
     public void setOnlineState() {
         rootRef = FirebaseDatabase.getInstance().getReference();
@@ -1395,14 +1458,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         });
 
-            builder.setPositiveButton(generalFunc.retrieveLangLBl("ADD NEW", "LBL_ADD_VEHICLES"), (dialog, which) -> {
+        builder.setPositiveButton(generalFunc.retrieveLangLBl("ADD NEW", "LBL_ADD_VEHICLES"), (dialog, which) -> {
 
-                dialog.cancel();
-                Bundle bn = new Bundle();
-                bn.putString("app_type", app_type);
-                (new StartActProcess(getActContext())).startActWithData(AddVehicleActivity.class, bn);
+            dialog.cancel();
+            Bundle bn = new Bundle();
+            bn.putString("app_type", app_type);
+            (new StartActProcess(getActContext())).startActWithData(AddVehicleActivity.class, bn);
 
-            });
+        });
 
         list_car = builder.create();
         if (generalFunc.isRTLmode() == true) {

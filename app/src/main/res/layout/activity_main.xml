@@ -44,6 +44,37 @@
                         android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:id="@+id/layout_surge"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/back_surgeprice"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="55dp"
+                            android:layout_height="55dp">
+                            <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                android:src="@drawable/ic_surge"/>
+                            <TextView
+                                android:id="@+id/surgePriceFactor"
+                                android:layout_width="55dp"
+                                android:layout_height="wrap_content"
+                                android:text="2.5"
+                                android:textSize="15dp"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:layout_marginTop="24dp"/>
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
 
                 </RelativeLayout>
 
